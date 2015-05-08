@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery Timeline plugin</title>
+<meta name="description" content="uSquare - Universal responsive grid jqurey plugin">
+<link href="fonts/ostrich%20sans/stylesheet.css" rel="stylesheet" type="text/css" />
+<link href="fonts/PT%20sans/stylesheet.css" rel="stylesheet" type="text/css" />
+<link href="css/usquare_module_style.css" rel="stylesheet" type="text/css" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+
+</head>
+<body>
+
+<div class="selectors">
+<h3 style="color:#313131;">Previews:</h3>
+<a href="index.html">Our team</a> <a href="logos.html">Logos</a> <a href="products.html">Products</a>
+</div>
+<div class="help">
+
+<h2>ABOUT</h2>
+
+<p>uSquare is a responsive squared grid that can display your content in a unique and interesting way. You can use it for displaying team members, products, services, designs, blog posts or anything else that comes to your mind. In our live preview we have included 3 modifications of the original file in order for you to see how uSquare can serve your purpose. <br /><br />
+
+While we developed uSquare responsive grid plugin we carefully thought about its responsive layout. We wanted to make sure that all elements are visible and accessible with all resolutions for responsive layout.</p>
+<h2>Calling</h2>
+
+
+<p>All you need to do is call:</p>
+<pre><code>
+<span class="red">$('.usquare_module_wrapper')</span>.uSquare();</code></pre>
+<br />
+
+
+<h2>HTML formating</h2>
+
+<p>Elements need to be wrapped like this:</p>
+<pre><code>&lt;div <span class="red">class="usquare_module_wrapper"</span>&gt;
+  &lt;div class="usquare_module_shade"&gt;&lt;/div&gt;
+    
+    &lt;!-- block 1 --&gt;
+    &lt;div class="usquare_block"&gt;
+       &lt;img <span class="green">src="content/5.jpg"</span> class="usquare_square" /&gt;
+       &lt;div class="usquare_square <span class="orange">usquare_square_bg1</span>"&gt;
+         &lt;div class="usquare_square_text_wrapper"&gt;
+            <span class="blue">&lt;img src="images/arrow.png" class="usquare_arrow" alt="arrow" /&gt;
+            &lt;div class="clear"&gt;&lt;/div&gt;
+            &lt;h2>JOHN DOE&lt;/h2&gt;
+            &lt;span>graphic designer / illustrator&lt;/span&gt;</span>
+         &lt;/div&gt;
+	&lt;/div&gt;
+	
+    &lt;div class="usquare_block_extended <span class="orange">usquare_square_bg1"</span>&gt;
+      &lt;a href="" class="close"&gt;&lt;img src="images/close.png" alt="close"/&gt;&lt;/a&gt;
+
+      &lt;ul class="social_background"&gt;
+        <span class="purple">&lt;li&gt;&lt;a href=""&gt;&lt;img src="images/social-fb.png" alt="social" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;&lt;img src="images/social-tw.png" alt="social" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;&lt;img src="images/social-in.png" alt="social" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;&lt;img src="images/social-pint.png" alt="social" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;&lt;img src="images/social-yah.png" alt="social" /&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;&lt;img src="images/social-dig.png" alt="social" /&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      &lt;/ul&gt;
+
+      &lt;div class="clear"&gt;&lt;/div&gt;
+      &lt;span class="bold"&gt;info:&lt;/span&gt;
+      &lt;div class="usquare_about"><span class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+      nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+      dolore eu fugiat nulla pariatur. </span>&lt;/div&gt;
+    &lt;/div&gt;
+	
+	
+	
+    &lt;/div&gt;
+	
+    &lt;!-- block 2 --&gt;
+    &lt;div class="usquare_block"&gt;
+    .
+    .
+    .
+    &lt;/div&gt;
+	
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<span class="red">* Wrapper class.</span><br />
+<span class="green">* Block image.</span><br />
+<span class="blue">* This can be any content you like.</span><br />
+<span class="orange">* Color class (to get gradient coloring change number 1 to 2,3,4...)</span><br />
+<span class="purple">* Your social icons, or some other relevant icons.</span>
+
+<h2>Parameters</h2>
+You can modify uSquare by using optional parameters argument:
+<pre><code>$('.usquare_module_wrapper').uSquare({
+  <span class="orange">name : value</span>
+});
+</code></pre>
+<br />
+<p>
+List of available parameters:
+</p>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Default</th>
+		<th>Description</th>
+	</tr>
+	
+	<tr>
+		<td>opening_speed</td>
+		<td>300</td>
+		<td>Animation speed at which items open</td>
+	</tr>
+	
+	<tr>
+		<td>closing_speed</td>
+		<td>500</td>
+		<td>Animation speed at which items close</td>
+	</tr>
+	
+	<tr>
+		<td>easing</td>
+		<td>'swing'</td>
+		<td>jQuery.easing effects for animations</td>
+	</tr>
+	
+	
+	<tr>
+		<td>before_item_opening_callback</td>
+		<td>null</td>
+		<td>function called whend item is preparing to open (on mouse click)</td>
+	</tr>
+	
+	
+	<tr>
+		<td>before_info_rolling_callback</td>
+		<td>null</td>
+		<td>function called while item is opening (when animation starts)</td>
+	</tr>
+	
+	
+	<tr>
+		<td>after_info_rolling_callback</td>
+		<td>null</td>
+		<td>function called when item opens (at the end of all animations)</td>
+	</tr>
+
+
+</table>
+
+<div class="clear"></div>
+<h2>Requirements</h2>
+<p>
+Required: <a href="http://jquery.com/">jQuery 1.7+</a> (Google-hosted)<br />
+Required: <a href="http://jqueryui.com/">jQuery Ui</a> (Google-hosted)<br />
+Required: <a href="https://github.com/brandonaaron/jquery-mousewheel">jQuery Mousewheel</a> (included)<br />
+Required: <a href="http://manos.malihu.gr/jquery-custom-content-scroller">jQuery Custom Scrollbar</a> (included)<br /><br />
+
+Extra: Use <a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing</a> for additional easing options. (included)<br />
+Extra: Use <a href="http://sorgalla.com/jcarousel/">jQuery jcarousel</a> for image slider. (included)
+
+   
+</p>
+<br />
+<br />
+<br />
+</div>
+</body>
+</html>

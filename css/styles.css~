@@ -1,0 +1,947 @@
+
+/*
+FUENTES
+    Caligráfica ligera: 'pinkSkinny'
+    Caligráfica gruesa: 'pinkMedium'
+    
+    Fuente Ubuntu:  'ubuntuLight'
+                    'ubuntuRegular'
+                    'ubuntuBold'
+
+    Fuente de uso normal font-family: 'Open Sans', sans-serif; embebida en el código con google fonts
+
+COLORES
+    Color corporativo base (verde): #109C82 (old #18A68D)
+    Verde más oscuro para contrastar: #26816A
+    Gris oscuro para fuente base: #515151
+*/
+
+@font-face {
+    font-family: 'pinkSkinny';
+   
+    src: url('../fonts/all_things_pink_skinny-webfont.eot');
+    src: url('../fonts/all_things_pink_skinny-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/all_things_pink_skinny-webfont.woff2') format('woff2'),
+         url('../fonts/all_things_pink_skinny-webfont.woff') format('woff'),
+         url('../fonts/all_things_pink_skinny-webfont.ttf') format('truetype'),
+         url('../fonts/all_things_pink_skinny-webfont.svg#all_things_pink_skinnyskinny') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'pinkMedium';
+    src: url('../fonts/all_things_pink-webfont.eot');
+    src: url('../fonts/all_things_pink-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/all_things_pink-webfont.woff2') format('woff2'),
+         url('../fonts/all_things_pink-webfont.woff') format('woff'),
+         url('../fonts/all_things_pink-webfont.ttf') format('truetype'),
+         url('../fonts/all_things_pink-webfont.svg#all_things_pinkmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ubuntuBold';
+    src: url('../fonts/ubuntu-b-webfont.eot');
+    src: url('../fonts/ubuntu-b-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-b-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntu-b-webfont.woff') format('woff'),
+         url('../fonts/ubuntu-b-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntu-b-webfont.svg#ubuntubold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ubuntuLight';
+    src: url('../fonts/ubuntu-l-webfont.eot');
+    src: url('../fonts/ubuntu-l-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-l-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntu-l-webfont.woff') format('woff'),
+         url('../fonts/ubuntu-l-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntu-l-webfont.svg#ubuntulight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ubuntuRegular';
+    src: url('../fonts/ubuntu-r-webfont.eot');
+    src: url('../fonts/ubuntu-r-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/ubuntu-r-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntu-r-webfont.woff') format('woff'),
+         url('../fonts/ubuntu-r-webfont.ttf') format('truetype'),
+         url('../fonts/ubuntu-r-webfont.svg#ubunturegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+body {font-family: 'Open Sans', sans-serif;color:#515151;}
+.titulo {font-family: 'ubuntuBold';}
+.item-desk{display: inline-block;}
+.item-resp{display: none;}
+.ahoraMadrid{font-family:'pinkMedium'; color:#109C82;}
+.ahoraMadridLogo{
+  color: #109C82;
+  font-weight: bold;
+}
+.linkVerde {color:#515151; }
+.wrapper {  }
+.navbar { margin-bottom:0; }
+
+/* subimos el tamano de fuente hasta 20em en el html y bajamos a 10em en el body */
+html{ font-size: 125%; -webkit-overflow-scrolling: touch;}
+body{ font-size: .5em; margin:0; padding:0; -webkit-overflow-scrolling: touch;}
+
+
+header.container-fluid {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    z-index: 10000;
+}
+
+
+.hide{
+    position:absolute !important;
+    clip:rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip:rect(1px, 1px, 1px, 1px);
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+.bloque{ display: block; }
+.iB {display: inline-block;}
+
+/*Guías para maquetar*/
+
+/*
+section {outline: 1px red dashed;}
+article {outline: 1px pink dashed;}
+.candidato {outline: 1px blue dashed;}
+*/
+.cambiar { /*background: yellow;
+          color: red; */ }
+
+/*Cabecera*/
+
+
+header h1 {
+    text-align: center;
+    color: #109C82;
+}
+#ahoraMadrid{
+    background: url(../img/home-fondo1.jpg);
+    background-size: cover;
+    background-position: center center;
+    
+}
+.logoAnimado {min-height: 50em;}
+.logo {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding-bottom: 2em;
+    width: 90%;
+    max-height: 15%;
+    max-width: 350px;
+    min-width: 200px;
+    text-align: center;
+}
+.logo img {
+  width: 90%;
+  padding: 26px;
+}
+.logo iframe {
+  width: 90%;
+  min-width: 540px !important;
+  min-height: 315px;
+  margin-left: -150px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 5px solid rgb(24, 166, 141); 
+}
+.lema h1{
+  font-family: ubuntuRegular;
+  color: #fff;
+  background: rgb(24, 166, 141);
+  font-size: 23px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.navbar,
+.navbar .container-fluid > .navbar-header {min-height: 50px;}
+.navbar-default,
+.navbar-header {
+    background-color: #109C82;
+    border-radius: 0;
+}
+.navbar-default .navbar-nav > li > a {
+    font-family: 'ubuntuLight';
+    text-transform: uppercase;
+    color: #fff;
+    padding: 13px 21px;
+}
+.navbar-nav li:first-child a {padding: 5px 10px;}
+.navbar-toggle {color:#109C82 ;}
+.navbar-toggle:hover,
+.navbar-toggle:active {color: #515151 ;}
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-toggle::before {color: #fff;}
+ section {padding-top: 70px;}
+.isStuck {
+    width: 100%;
+    z-index: 999;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {color: #fff;}
+.navbar-default .navbar-nav > li:hover,
+.navbar-default .navbar-nav > li:focus {background-color:#1abc9c}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small, .h1 small, .h2 small, .h3 small, .h4 small, .h5 small, .h6 small {
+    color: #ADADAD;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'ubuntuBold';
+    font-weight: 500;
+}
+.navbar-default .navbar-brand {padding: 2px 5px;}
+.navbar-default .navbar-toggle {background-color: transparent;}
+
+/* NOTIFICACIONES */
+
+.manuCirculo {
+  position: absolute;
+  right: 5px;
+  bottom: -10px;
+}
+
+.notas {
+  position: fixed;
+  right: 0;
+    bottom: 15px;
+}
+
+.notas p.nombre {
+  position: relative;
+  right: 157px;
+  color: #FFF;
+  top: 12px;
+  font-size: 1.1em;
+  background-color: #109C82;
+}
+
+.notas div.num-not {
+  position: absolute;
+  right: 112px;
+  top: -65px;
+  top: -102px;
+  background: #109C82;
+  width: 35px;
+  text-align: center;
+  border-radius: 100%;
+  height: 35px;
+  color: #fff;
+  z-index: 10;
+}
+.notas a.ver-notas {
+  color: #fff;
+  /* font-weight: bold; */
+  font-family: "ubuntuRegular";
+  font-size: 18px;
+  padding-top: 2px;
+  display: block;
+}
+
+.not-title {
+  background: rgb(24, 166, 141);
+  color: #FFF;
+  padding: 0px 2px;
+  width: 100%;
+  display: block;
+}
+
+.not-text {
+  font-size:.9em;
+  line-height:.9em;
+}
+
+.not-icon {
+  top:24px;
+  left:9px;
+  position:absolute;
+}
+
+
+/* twitter */
+
+div#twit {
+  margin-left: -32px;
+  line-height: 1em;
+  opacity: .4;
+  width:40%;
+  height:100%;
+  overflow:hidden;
+}
+#twit ul li {
+  list-style: none;
+}
+#twit img {
+    display: none;
+}
+p.tweet {
+  font-size: 21px;
+  line-height: 1.2em;
+}
+p.user {
+  margin: 0;
+}
+p.user a img { display:none; }
+.strong {font-weight: bold;}
+
+/*Títulos*/
+
+section header h1 {
+    font-size: 6em;
+    color: #109C82;
+  text-align: left;
+  margin-bottom: 1em;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Somos*/
+
+.somos p.ahoraMadrid {
+      font-family: "pinkSkinny";
+      font-weight: 900;
+      font-size: 63px;
+      text-align: center;
+      margin: 1em auto 0em;
+}
+section.quien{
+  background: url(../img/carmena_1600.jpg) no-repeat;
+  background-position: bottom center;
+  /* background-size: cover; */
+  border-bottom: 10px solid #109C82;
+  margin-top: 59px;
+   
+    
+}   
+section.quien p { width: 67%;}
+section.que{
+    background: url(../img/equipo_1600.jpg) no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-bottom: 10px solid #109C82;
+    
+}  
+.somos p {
+    padding: 1em 0.5em;
+    font-size: 20px;   
+}
+section.que p {
+    font-size: 16px;
+    padding: 0;
+}
+section.que p.h3{
+    font-family: "ubuntuBold";
+    font-size: 51px;
+    color: #fff;
+    background-color: #109C82;
+    padding: 5px 10px;  
+    width: 31%;
+}
+section.que p.h3:nth-child(1){
+    width: 20%;
+}
+section.que .ahora {
+    margin: 150px 0 300px;
+}
+/* Programa */
+
+.programa article {
+    min-height: 20em;
+}
+.programa article h2 {
+    margin: 2em auto;
+}
+.programa article p {
+    padding: 1em 0.5em;
+    font-size: 16px;
+}
+.programa h3,
+.programa .h3,
+.programa h2,
+.programa .h2{
+    font-size: 30px;  
+}
+.programa article.programaDetalle h2{
+    margin: .25em auto;
+    min-height: 4em;
+}
+.programa article.programaDetalle a:hover,
+.programa article.programaDetalle a:focus,
+.programa article.programaDetalle a:active {
+    color: #fff;
+    background:#16A085;
+}
+.programaDetalle figure {
+    text-align: center;
+    margin: 1% 2% 10%;
+}
+.programaDetalle ul{
+    padding-left: 0;
+    list-style: none;
+    font-size: 15px;
+    line-height: 1.25em;
+}
+.programaDetalle ul li {
+      padding-bottom: .75em;
+      border-bottom: 1px solid #ccc;
+      padding-top: .75em;
+}
+.programaDetalle ul li:last-child{
+    border-bottom: none;
+}
+.programa header.container h2.h2{
+    margin: 2em 0;
+}
+.cienMedidas {
+    display: inline-block;
+    overflow: hidden;
+}
+.cienMedidas .container h2.h2{
+  margin-left: -33px;
+  margin-bottom: 1em;
+}
+.cienMedidas .medida {
+  width: 19.666667%;
+  display: inline-block;
+  /* height: 100%; */
+  background-color: #109C82;
+  border-left: 10px solid #fff;
+  margin-left: -2px;
+  padding: 0 5px;
+  position: relative;
+  min-height: 393px;
+  vertical-align: top;
+  text-align: left;
+}
+.cienMedidas .media:first-child{
+    margin-left: -10px;
+}
+.cienMedidas .medida:last-child{
+    border-right: 10px solid #fff;
+} 
+.cienMedidas .medidas {
+    margin: auto;
+    text-align: center;
+}
+.cienMedidas .medidas h3{
+    font-size: 19px;
+}
+.cienMedidas .medidas h3 a {    color: #fff;}
+.cienMedidas .medidas p {
+    font-size: 14px;
+    color: #fff;
+}
+.cienMedidas .medidas p {
+    padding-bottom: 0;
+}
+.cienMedidas .medidas .number{
+  font-size: 91px;
+  font-family: "ubuntuBold";
+  font-weight: bold;
+  color: #3ed0b6;
+  display: block;
+  text-align: right;
+  position: absolute;
+  bottom: -34px;
+  right: 5px;
+}
+.fui-twitter {
+  color: #fff;
+  font-size: 1.5em;
+  display: block;
+  padding-bottom: .5em;
+}
+.fondo{
+  background-color: #8bd2c6;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Equipo */
+
+h1 .ahoraMadrid {padding-bottom: 70px; }
+
+.usquare_square_bg1 {
+    background-color: #109C82;
+}
+.usquare_square_bg2 {
+    background: #46b8a8;
+}
+.usquare_square_bg3 {
+    background: #74cabb;
+}
+.usquare_square_bg4 {
+    background: #a3dbd1;
+}
+.usquare_square_bg5 {
+    background: #d1ede8;
+}
+.usquare_block_extended .usquare_about {
+    font-family: 'Open Sans';
+}
+.usquare_module_wrapper span {
+    font-family: 'Open Sans';
+}
+/* Agenda */
+
+
+.agenda .pull-left img {
+    padding: 2em .5em;
+}
+.timeline dl dt {
+    background-color: #109C82;
+    width: 238px;
+    border-radius: 0;
+    margin: 3px auto 78px;
+ }
+.timeline dl dt h3 {
+  margin: 2px auto;
+  font-size: 39px;
+  font-family: "ubuntuRegular";
+  color: #fff;
+}
+
+.timeline dl dd h2 {
+     color: #109C82;
+    font-size: 28px;
+}
+small.ahoraMadrid{
+    font-family:'pinkMedium';
+    padding-left: .2em;
+    display: block;
+    font-size: 24px;
+    color: #515151;
+    margin-top: -10px;
+}
+.agenda article dd {
+    margin-bottom: 50px;
+}
+.agenda article dd p {
+  line-height: 1em;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 5px;
+}
+.agenda article dd p.hora{
+    margin-top: 10px;
+    margin-top: 21px;
+    margin-bottom: 5px;
+}
+.agenda article dd p.sitio{
+    margin-top: 5px;
+    font-weight: normal;
+    font-size: 14px;
+}
+.agenda article dd p.tema {
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 25px;
+    line-height: 20px;
+    color: #515151;
+}
+.timeline dl dd.pos-right .time {
+    font-family: 'pinkMedium';
+    color: #109C82;
+    font-size: 26px;
+    width: auto;
+    padding: 0px 0px;
+    margin-left: -11%;
+}
+.timeline .fui-twitter {
+    color: #109C82;
+    font-size: 1.5em;
+    padding-bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: .25em;
+}
+.timeline dl dd.pos-left .time {    
+    font-family: 'pinkMedium';
+    color: #109C82;  
+    font-size: 26px;
+    width: auto;
+    padding: 0px 0px;
+    width: auto;
+    padding: 0px 20px;
+}
+.timeline dl dd.pos-right .events {
+    float: right;
+    margin-top: 0;
+}
+.timeline dl dd.pos-left .events {
+    float: left;
+    margin-top: 0;
+    text-align: right;
+}
+.timeline dl dd .circ {
+    background-color: #fff;
+    border: 2px solid #109C82;
+}
+.timeline dl dt.elecciones {
+    background-color: #fff;
+    width: 100%;
+}
+.timeline dl dt.elecciones h3 {
+    background-color: #109C82;
+    font-size: 5em;
+    padding: 12px 0px;
+}
+
+
+/* Notificaciones */
+
+[data-notify="progressbar"] {
+    margin-bottom: 0px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 5px;
+}
+
+/*Plugin Equipo */
+.usquare_module_wrapper h1,
+.usquare_module_wrapper h2,
+.usquare_module_wrapper h3,
+.usquare_module_wrapper h4,
+.usquare_module_wrapper h5,
+.usquare_module_wrapper h6 {
+    font-family: 'OstrichSansMedium';
+  font-weight: normal;
+  color: #fff;
+  margin: 10px 0;
+  font-family: "pinkSkinny";
+  /* font-family: ubuntu; */
+  font-size: 12px;
+}
+.usquare_module_wrapper  h1 {
+	font-size:38px;
+}
+.usquare_module_wrapper h2 {
+	font-size:30px;
+}
+.usquare_module_wrapper h3 {
+	font-size:22px;
+}
+.usquare_module_wrapper h4 {
+	font-size:20px;
+}
+.usquare_module_wrapper {
+	font-family: 'PTSansRegular', Sans-Serif;
+	font-size:14px;
+	margin:0 auto;
+	text-align:center;
+}
+.usquare_module_wrapper a {
+	text-decoration:none;
+	color:#1a86ac;
+}
+
+.usquare_module_wrapper a img {
+	border:0;
+}
+.clear {
+	clear:both;
+}
+.usquare_module_wrapper .half_page {
+	width:460px;
+	float:left;
+}
+
+.usquare_module_wrapper .half_page.first {
+	margin-right:20px;
+}
+
+.usquare_module_wrapper .selectors {
+	text-align:center;
+	margin:20px auto;
+	border-bottom:1px solid #ef4939;
+	max-width:960px;
+}
+.usquare_module_wrapper .selectors a {
+	font-family:'OstrichSansMedium';
+	font-weight: normal;
+	text-decoration:none;
+	color:#ef4939;
+	font-size:34px;
+	margin:10px;
+}
+.usquare_module_wrapper .selectors a.active,
+.usquare_module_wrapper .selectors a:hover {
+	color:#313131;
+}
+.usquare_module_wrapper p {font-size: 13px;}
+
+/* Footer */
+
+footer {
+    background-color: #18a68d;
+    color: #fff;
+}
+
+footer .container {
+    padding: 2%;
+    display: inline-block;
+}
+
+footer .container div {
+    display: inline-block;
+}
+
+    
+/* ANIMACIONES*/
+/*
+.animated {
+  -webkit-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+*/
+
+
+
+
+/* MEDAQUERIES */
+
+/*Dispositivos grandes (ordenadores). <1200px*/
+ 
+    @media (max-width: 1200px) { 
+/*        .container {
+          width: 1024px;
+        }*/
+
+        .timeline dl dd.pos-right .time {
+            margin-left: -15%;
+        }
+        section.quien {
+          background: url(../img/carmena_1024.jpg) no-repeat;
+          background-size: cover;
+          background-position: center center;
+        }
+        section.que{
+          background: url(../img/equipo_1200.jpg) no-repeat;
+          background-position: 97% bottom;
+          background-size: auto;
+          border-bottom: 10px solid #109C82;
+        }  
+        section.que .ahora {
+          margin: 39px 0 323px;
+        }
+        section.que p.h3 {width: 38%;}
+        section.que p.h3:nth-child(1) {width: 33%;}
+    }
+    @media (max-width:1100px) {
+        .navbar-default .navbar-nav > li > a {
+              font-family: 'ubuntuLight';
+              text-transform: uppercase;
+              color: #fff;
+              padding: 14px 8.25%;
+              font-size: 0.85em;
+        }
+        #barra > ul > li > a.itemLogo   {
+            padding: 5px 10px;
+        }
+    }
+
+/*Dispositivos medianos (ordenadores). <992px*/
+     @media (max-width: 992px) { 
+
+
+         .quien .container .row p {
+            display: block;
+            width: 63%;
+               padding: 0em 0.5em;
+         }
+         section header h1 {font-size: 5em;}
+         section header h1 small {display: block;}
+         section.que p.h3 {width: 50%;}
+         section.que .ahora{  margin: 52px 0 436px;}
+         section.que{
+          background: url(../img/equipo_1200.jpg) no-repeat;
+          background-position: 97% bottom;
+          background-size: auto;
+          border-bottom: 10px solid #109C82;
+        }  
+         
+        .cienMedidas .medida {
+            min-height: 479px;
+         }
+         .cienMedidas .medidas p {
+            font-size: 12px;
+         }
+         .timeline dl dd.pos-right .time {
+              margin-left: -19%;
+         }
+         
+     }
+
+/*Dispositivos pequeños (tablets). <768px*/
+     @media (max-width: 768px ) { 
+         
+         h2, .h3 {
+            font-size: 40px;
+        }
+        .equipo article ul.listaElectoral li img {
+            max-width: 100%;
+            padding: 3%;
+            margin: 5%;
+        }
+         
+         section.quien {
+            background-position: 65% 100%;
+         }
+         section.quien .container .row p {
+          width: 53%;
+          margin-left: 2px;
+          font-size: 16px;
+        }
+         .quien .container .row p {
+            width: 44%;
+            margin-left: 2px;
+         }
+         section.quien header small {
+            display: block;
+         }
+        section.quien{
+            background: url(../img/carmena_768.jpg) no-repeat;
+              background-position: bottom right;
+        } 
+           margin: 52px 0 436px;
+         section.que p {
+            padding-left: 15px;
+         }
+         section.que{
+          background: url(../img/equipo_768_2.jpg) no-repeat;
+          background-position: 97% bottom;
+          background-size: auto;
+          border-bottom: 10px solid #109C82;
+        }  
+         section.que .ahora {  margin: 52px 0 49px;}
+         section.que p.h3 {
+              width: 58%;
+            }
+         section.que p.h3:nth-child(1) {width: 41%;}
+         .programa article.programaDetalle h2 {
+            max-height: 1.5em;
+         }
+         .programaDetalle figure {
+              margin: 1% 2% 8%; 
+         }
+         .cienMedidas .medida {
+            width: 100%;
+             min-height: 250px;
+              border: 10px solid #fff;
+         }
+         .timeline dl dd.pos-left .events {
+              float: left;
+              margin-top: 0;
+              text-align: left;
+              margin-left: 16%;
+         }
+         .timeline .fui-twitter {
+            display: none;
+         }
+         .timeline dl dd.pos-left .time {
+             margin: -73px 0px 0px;
+              color: #fff;
+              background-color: #46b8a8;
+              padding: 0 10px;
+              z-index: 1000;
+              width: 100%;
+              font-size: 19px;
+         }
+         small.ahoraMadrid {
+            margin-top: 6px;
+         }
+         .timeline dl dd.pos-right .time {
+          margin: -73px 0px 0px;
+          color: #fff;
+          background-color: #46b8a8;
+          padding: 0 10px;
+          z-index: 1000;
+          width: 100%;
+          font-size: 19px;
+         }
+         .timeline dl dt {width: 100%;}
+         
+        
+
+     }
+     @media (max-width: 660px) {
+         section {padding-top: 20px;}
+         section.que p.h3 {width: 100%;  font-size: 33px;}    
+         section.que p.h3:nth-child(1) {width: 100%;}
+         section.que .ahora {
+          margin: 52px 0 282px;
+        }
+         
+     }
+/*Dispositivos pequeños (móviles). <520px*/
+     @media (max-width: 480px ) { 
+         
+         section.quien .container .row p {width: 100%;}
+         section.quien {  min-height: 700px;
+  background-position: bottom right;}
+
+
+     }
+
+
