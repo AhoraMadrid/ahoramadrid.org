@@ -415,6 +415,26 @@ section.que .ahora {
 .programa header.container h2.h2{
     margin: 2em 0;
 }
+.descargaprograma {
+    margin: auto;
+    padding-bottom: 4em;
+    width: 90%;
+    max-height: 15%;
+    max-width: 400px;
+    min-width: 200px;
+    text-align: center;
+}
+.descargaprograma h3 {
+  font-family: ubuntuRegular;
+  color: #fff;
+  background: rgb(24, 166, 141);
+  font-size: 23px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.descargaprograma a {
+  color: #fff;
+}
 .cienMedidas {
     display: inline-block;
     overflow: hidden;
