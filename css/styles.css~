@@ -160,15 +160,30 @@ header h1 {
   width: 90%;
   padding: 26px;
 }
-.logo iframe {
-  width: 90%;
+.player {
+  float: none;
+  clear: both;
+  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+}
+}
+.player iframe {
+  /* width: 90%; */
   min-width: 540px !important;
   min-height: 315px;
-  margin-left: -150px;
+  margin-left: -100px;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
   border: 5px solid rgb(24, 166, 141); 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .lema h1{
   font-family: ubuntuRegular;
@@ -414,6 +429,26 @@ section.que .ahora {
 }
 .programa header.container h2.h2{
     margin: 2em 0;
+}
+.descargaprograma {
+    margin: auto;
+    padding-bottom: 4em;
+    width: 90%;
+    max-height: 15%;
+    max-width: 400px;
+    min-width: 200px;
+    text-align: center;
+}
+.descargaprograma h3 {
+  font-family: ubuntuRegular;
+  color: #fff;
+  background: rgb(24, 166, 141);
+  font-size: 23px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+.descargaprograma a {
+  color: #fff;
 }
 .cienMedidas {
     display: inline-block;
