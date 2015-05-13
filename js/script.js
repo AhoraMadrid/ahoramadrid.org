@@ -4,29 +4,23 @@ jQuery(document).ready(function($) {
   var isDesktop;
   var altoManu, altoNacho;
   var candidato;
+  var isiPad;
 
   function init () {
     
     alto = $(window).height();
     isDesktop = $(window).width()>590;
-    //$('section').css('height',alto);
-
-    /*var posicionManu = $('#paralax-manu').offset();
-    altoManu = posicionManu.top;
-
-    var posicionNacho = $('#paralax-nacho').offset();
-    altoNacho = posicionNacho.top;*/
+    isiPad = navigator.userAgent.match(/iPad/i) != null;
 
     //Funciones solo desktop:
     if(isDesktop){
       
       $('#ahoraMadrid').css('height',alto);
-      
-      paralax();
-      
-      /*$(window).scroll(function() {
-        //fijarMenu();
-      });*/
+      $('#spot').css('height',alto);
+
+      if(!isiPad) {
+         paralax();
+      }
 
     }
 
@@ -40,17 +34,20 @@ jQuery(document).ready(function($) {
     animacionAnclas();
     //mostrarAlt();
     //AM.Notitas.verNotas();
-    verTodas();
+    //verTodas();
 
-    
- /*   var tuits = setInterval(function() {
+    /*
+    var tuits = setInterval(function() {
       
       twitterFetcher.fetch(configTweet);
       claseRedonda();
-    },10000); */
+    },10000);
+    */
     
+    if(!isiPad) {
+         efectosWow();
+      }
     
-    efectosWow();
       
     $('.usquare_module_wrapper').uSquare();
 
